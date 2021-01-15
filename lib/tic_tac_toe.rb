@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #player
 
 def turn_count(board)
@@ -19,6 +20,8 @@ def current_player(board)
 end
 
 
+=======
+>>>>>>> 544bd03c3593002c26f61a73ed621cdc10e62d0f
 
 # move
 def position_taken?(board, index)
@@ -37,8 +40,13 @@ def input_to_index(user_input)
   user_input.to_i - 1
 end
 
+<<<<<<< HEAD
 def move(board, index, token)
   board[index] = token
+=======
+def move(board, index, current_player = "X")
+  board[index] = current_player
+>>>>>>> 544bd03c3593002c26f61a73ed621cdc10e62d0f
 end
 
 def position_taken?(board, location)
@@ -54,7 +62,11 @@ def turn(board)
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(board, index)
+<<<<<<< HEAD
     move(board, index, current_player(board))
+=======
+    move(board, index)
+>>>>>>> 544bd03c3593002c26f61a73ed621cdc10e62d0f
     display_board(board)
   else
     turn(board)
@@ -97,7 +109,11 @@ def draw?(board)
 end
 
 def over?(board)
+<<<<<<< HEAD
   full?(board) || won?(board) || draw?(board)
+=======
+  full?(board) || won?(board)
+>>>>>>> 544bd03c3593002c26f61a73ed621cdc10e62d0f
 end
 
 def winner(board)
@@ -114,6 +130,7 @@ end
 # Define your play method below
 def play(board)
   round = 0
+<<<<<<< HEAD
   while !over?(board)
     round += 1
     turn(board)
@@ -123,5 +140,10 @@ def play(board)
     puts("Cat's Game!")
   else
     puts("Congratulations #{winner(board)}!")
+=======
+  while round < 9
+    round += 1
+    turn(board)
+>>>>>>> 544bd03c3593002c26f61a73ed621cdc10e62d0f
   end
 end
